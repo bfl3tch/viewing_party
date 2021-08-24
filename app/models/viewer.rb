@@ -1,0 +1,2 @@
+class Viewer < ApplicationRecord
+end

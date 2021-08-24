@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @viewer.title %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @viewer.host %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @viewer.start_time %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @viewer.date %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @viewer.duration %>
+</p>
+
+<%= link_to 'Edit', edit_viewer_path(@viewer) %> |
+<%= link_to 'Back', viewers_path %>
