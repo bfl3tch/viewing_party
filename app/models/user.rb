@@ -7,8 +7,9 @@ class User < ApplicationRecord
   has_many :friends, through: :friendships
   has_many :attendees, through: :events
 
-  validates :username, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
+  validates :password, :length => {:within => 6..70}
+  validates :username, presence: true, format: { with: /\A\w+\z/, message: "doesn't allow spaces or special characters" }, uniqueness: { case_sensitive: false }
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   # validates :password_confirmation, presence: true, on: :create
   # validates :password, confirmation: { case_sensitive: true }
   # validates :password, confirmation: true
