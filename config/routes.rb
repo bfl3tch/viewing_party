@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   get '/registration', to: "users#new"
+  post '/login', to: 'users#login'
 
-  resources :users, except: [:show] do
+  resources :users, except: [:show, :new, :index] do
     resources :events
   end
 
-  get "dashboard", to: 'users#show'
+  get "dashboard/:id", to: 'users#show', as: "dashboard"
 end

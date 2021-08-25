@@ -9,7 +9,93 @@ RSpec.describe 'The welcome landing page' do
     expect(current_path).to eq('/')
   end
 
-  it 'has a form to login'
+  it 'has a form to login' do
+    expect(page).to have_content("Username")
+    expect(page).to have_content("Password")
 
-  it 'has a link to register if you arent already'
+    expect(page).to have_button("Log In")
+  end
+
+  it 'has a link to register if you arent already' do
+    expect(page).to have_link("New to Virtual Watch Party? Register Here")
+    click_link "New to Virtual Watch Party? Register Here"
+
+    expect(current_path).to eq(registration_path)
+
+    expect(page).to have_content("Username")
+    expect(page).to have_content("Email")
+    expect(page).to have_content("Password")
+    expect(page).to have_content("Password Confirmation")
+  end
+
+   it "can create a new user" do
+     click_link "New to Virtual Watch Party? Register Here"
+
+     fill_in "user[username]", with: "StevenSpielberg"
+     fill_in "user[email]", with: "stevenspielberg@email.com"
+     fill_in "user[password]", with: "Test"
+     fill_in "user[password_confirmation]", with: "Test"
+
+     click_button "Create User"
+
+     # require "pry"; binding.pry
+     expect(current_path).to eq(dashboard_path(User.last.id))
+     expect(page).to have_content("Welcome, StevenSpielberg!")
+   end
+
+   it "won't create a new user without username" do
+     click_link "New to Virtual Watch Party? Register Here"
+
+     fill_in "user[username]", with: ""
+     fill_in "user[email]", with: "stevenspielberg@email.com"
+     fill_in "user[password]", with: "Test"
+     fill_in "user[password_confirmation]", with: "Test"
+
+     click_button "Create User"
+
+     expect(current_path).to eq(registration_path)
+     expect(page).to have_content("Please fill out all fields")
+   end
+
+   it "won't create a new user without user email" do
+     click_link "New to Virtual Watch Party? Register Here"
+
+     fill_in "user[username]", with: "StevenSpielberg"
+     fill_in "user[email]", with: ""
+     fill_in "user[password]", with: "Test"
+     fill_in "user[password_confirmation]", with: "Test"
+
+     click_button "Create User"
+
+     expect(current_path).to eq(registration_path)
+     expect(page).to have_content("Please fill out all fields")
+   end
+
+   it "won't create a new user without password" do
+     click_link "New to Virtual Watch Party? Register Here"
+
+     fill_in "user[username]", with: "StevenSpielberg"
+     fill_in "user[email]", with: "stevenspielberg@email.com"
+     fill_in "user[password]", with: ""
+     fill_in "user[password_confirmation]", with: "Test"
+
+     click_button "Create User"
+
+     expect(current_path).to eq(registration_path)
+     expect(page).to have_content("Please fill out all fields")
+   end
+
+   xit "won't create a new user without password confirmation" do
+     click_link "New to Virtual Watch Party? Register Here"
+
+     fill_in "user[username]", with: "StevenSpielberg"
+     fill_in "user[email]", with: "stevenspielberg@email.com"
+     fill_in "user[password]", with: "Test"
+     fill_in "user[password_confirmation]", with: "Te"
+
+     click_button "Create User"
+
+     expect(current_path).to eq(registration_path)
+     expect(page).to have_content("Please fill out all fields")
+   end
 end
