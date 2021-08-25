@@ -19,8 +19,8 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome, #{new_user.username}"
       redirect_to dashboard_path(new_user.id)
     else
+      flash[:error] = new_user.errors.full_messages.to_sentence
       redirect_to registration_path
-      flash[:failure] = "Please fill out all fields"
       # render "new"
     end
   end
@@ -30,9 +30,10 @@ class UsersController < ApplicationController
     if user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.username}!"
-      redirect_to root_path
+      redirect_to dashboard_path(user.id)
     else
-      flash[:error] = "Sorry, your credentials are bad."
+      flash[:error] = user.errors.full_messages.to_sentence
+      redirect_to root_path
       # render :login
     end
   end
