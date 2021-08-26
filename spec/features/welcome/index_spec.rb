@@ -29,7 +29,7 @@ RSpec.describe 'The welcome landing page' do
   end
 
    it "can create a new user" do
-     click_link "New to Virtual Watch Party? Register Here"
+     click_on "New to Virtual Watch Party? Register Here"
 
      fill_in "user[username]", with: "StevenSpielberg"
      fill_in "user[email]", with: "stevenspielberg@email.com"
@@ -38,13 +38,12 @@ RSpec.describe 'The welcome landing page' do
 
      click_button "Create User"
 
-     # require "pry"; binding.pry
      expect(current_path).to eq(dashboard_path(User.last.id))
      expect(page).to have_content("Welcome, StevenSpielberg")
    end
 
    it "won't create a new user with special characters in username" do
-     click_link "New to Virtual Watch Party? Register Here"
+     click_on "New to Virtual Watch Party? Register Here"
 
      fill_in "user[username]", with: "steven@"
      fill_in "user[email]", with: "stevenspielberg@email.com"
@@ -59,7 +58,7 @@ RSpec.describe 'The welcome landing page' do
 
 
    it "won't create a new user without username" do
-     click_link "New to Virtual Watch Party? Register Here"
+     click_on "New to Virtual Watch Party? Register Here"
 
      fill_in "user[username]", with: ""
      fill_in "user[email]", with: "stevenspielberg@email.com"
@@ -128,7 +127,7 @@ RSpec.describe 'The welcome landing page' do
      expect(page).to have_content("Password is too long (maximum is 72 characters)")
    end
 
-   xit "won't create a new user without password confirmation match" do
+   it "won't create a new user without password confirmation match" do
      click_link "New to Virtual Watch Party? Register Here"
 
      fill_in "user[username]", with: "StevenSpielberg"
