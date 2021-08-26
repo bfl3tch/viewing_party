@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Logging in' do
+RSpec.describe UsersController do
   before(:each) do
     visit root_path
   end
@@ -13,7 +13,7 @@ RSpec.describe 'Logging in' do
     fill_in "user[password]", with: "Tester"
     fill_in "user[password_confirmation]", with: "Tester"
 
-    click_button "Create User"
+    click_on "Create User"
 
     expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("Welcome, StevenSpielberg")
@@ -49,6 +49,7 @@ RSpec.describe 'Logging in' do
   end
 
   it "won't create a new user without user email" do
+    User.destroy_all
     click_link "New to Virtual Watch Party? Register Here"
 
     fill_in "user[username]", with: "StevenSpielberg"
@@ -63,6 +64,7 @@ RSpec.describe 'Logging in' do
   end
 
   it "won't create a new user without password" do
+    User.destroy_all
     click_link "New to Virtual Watch Party? Register Here"
 
     fill_in "user[username]", with: "StevenSpielberg"
