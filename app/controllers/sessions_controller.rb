@@ -1,16 +1,18 @@
 class SessionsController < ApplicationController
-  def new; end
+  def new
+  end
 
   def create
+    # require "pry"; binding.pry
     found_user = User.find_by(username: params[:username])
-    if found_user.authenticate(params[:password])
-      session[:user_id] = found_user.id
-      redirect_to dashboard_path(found_user.id)
+    if found_user && found_user.authenticate(params[:password])
       flash[:success] = "Welcome, #{found_user.username}!"
+      session[:user_id] = found_user.id
+      redirect_to dashboard_path
+      # require "pry"; binding.pry
     else
-      redirect_to login_path
       flash[:error] = found_user.errors.full_messages.to_sentence
-      # render :login
+      redirect_to login_path
     end
   end
 
