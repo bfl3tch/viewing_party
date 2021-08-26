@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     user = user_params
     user[:email] = user[:email].downcase
     new_user = User.create(user_params)
+    require "pry"; binding.pry
     if new_user.save
       # require "pry"; binding.pry
       flash[:success] = "Welcome, #{new_user.username}"
@@ -40,6 +41,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email)
+    params.require(:user).permit(:username, :password, :password_confirmation, :email)
   end
 end
