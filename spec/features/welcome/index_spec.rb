@@ -138,6 +138,6 @@ RSpec.describe 'The welcome landing page' do
      click_button "Create User"
 
      expect(current_path).to eq(registration_path)
-     expect(page).to have_content("Please fill out all fields")
+     expect(page).to have_content("Password confirmation doesn't match Password")
    end
 end

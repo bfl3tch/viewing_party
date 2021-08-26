@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :events
   end
 
-  get "dashboard/:id", to: 'users#show', as: "dashboard"
+  get "dashboard/:id", to: 'users#show', as: "/dashboard"
 end
