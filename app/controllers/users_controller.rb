@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     new_user = User.create(user_params)
     if new_user.save
       flash[:success] = "Welcome, #{new_user.username}"
-      redirect_to dashboard_path(new_user.id)
+      session[:user_id] = new_user.id
+      redirect_to dashboard_path
     else
       flash[:error] = new_user.errors.full_messages.to_sentence
       redirect_to registration_path
