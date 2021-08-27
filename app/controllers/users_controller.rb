@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :user_login
-  def index
-    redirect_to dashboard_path
-  end
+  
+  def index;end
 
   def new
     @user = User.new
