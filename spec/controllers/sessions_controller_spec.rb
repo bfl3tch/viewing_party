@@ -23,6 +23,15 @@ RSpec.describe SessionsController, type: :controller do
     expect(flash[:error]).to match(@user.errors.full_messages.to_sentence)
   end
 
+  it "does not create a new session with unsuccessful login" do
+    allow(@user).to receive(:authenticate).and_return @user
+
+    post :create, params: { username: "", password: ""}
+
+    expect(session[:user_id]).to eq(nil)
+    expect(flash[:error]).to match(@user.errors.full_messages.to_sentence)
+  end
+
   it "deletes a session upon logout" do
     allow(@user).to receive(:authenticate).and_return @user
     post :create, params: { username: @user.username, password: @user.password}
