@@ -21,16 +21,18 @@
     <%= render partial: 'welcome/header', locals: { placeholder: ''} %>
 
     <% flash.each do |type, msg| %>
-      <div class="alert alert-info">
+      <div class="alert alert-info alert-dismissible">
         <%= msg %>
       </div>
     <% end %>
 
-    <div class='container'><br/>
+    <main class='container'<br/>
       <%= yield %>
-    </div>
+    </main>
 
-    <%= render partial: 'welcome/footer', locals: { placeholder: ''} %>
+    <div style="display:flex">
+      <%= render partial: 'welcome/footer', locals: { placeholder: ''} %>
+    </div>
   </body>
 
 
