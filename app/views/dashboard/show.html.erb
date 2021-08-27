@@ -1,1 +1,34 @@
-<h1>welcome <%= @user.username %></h1>
+<br/>
+<h1 align="center">
+  Welcome <%= @user.username %>
+</h1><br/>
+
+<h1 align="center">
+  <img src="https://media4.giphy.com/media/9rg3jLvkmuw5cIY0be/giphy.gif?cid=6c09b9527gsbl9w6kbi7q18rxg5mejdsk7kg5bozt0331voh&rid=giphy.gif&ct=s" alt="logo">
+  <%= link_to "Discover Movies", discover_path, class:"btn btn-lg btn-outline-dark btn-warning" %>
+</h1><br/><br/>
+<div align="center">
+  <section id='friends'>
+    <h3>Friends</h3><hr/>
+    <%= form_with url: friendships_path, method: :post, class: "btn btn-warning btn-outline-primary", local: true do |f| %>
+      <%= f.label :search, "Friend's Email" %>
+      <%= f.text_field :search %>
+      <%= f.submit "Add Friend" %>
+    <% end %><br/></br>
+
+    <% if @user.friends.empty? %>
+      <h4>You currently have no friends.</h4>
+    <% else %>
+      <% @user.friends.each do |friend| %>
+
+      <div align="center">
+  <div class="card navbar-custom"  style="width: 18rem;">
+    <div class="card-body">
+      <h4 class="card-title"><%= friend.username %></h4>
+      <h6 class="card-subtitle mb-2 text-muted"><h6 class="card-subtitle mb-2"> <%= friend.email %> </h6>
+    </div>
+  </div><br/>
+      <% end %>
+    <% end %>
+  </section>
+</div>

@@ -9,9 +9,13 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users, except: [:show, :new, :index] do
+  post '/friendships', to: 'friendships#create'
+
+  resources :users, except: [:show, :new] do
     resources :events
   end
 
   get '/dashboard', to: 'dashboard#show'
+
+  get '/discover', to: 'discovers#show'
 end

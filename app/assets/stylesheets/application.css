@@ -28,4 +28,6 @@ footer {
   display: flex;
   align-self: baseline;
   flex-direction: row;
+  background-color: black;
+  color: white;
 }

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
+  before_action :user_login
 
   def current_user
     User.find(session[:user_id]) if session[:user_id]
@@ -8,7 +9,8 @@ class ApplicationController < ActionController::Base
 
   def user_login
     if !current_user
-      redirect_to root_path, message: 'Please Login'
+      redirect_to root_path
+      flash[:error] = 'You must login to visit that page.'
     end
   end
 

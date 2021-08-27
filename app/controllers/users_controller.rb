@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  # def index; end
+  skip_before_action :user_login
+  
+  def index;end
 
   def new
     @user = User.new
