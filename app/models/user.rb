@@ -20,4 +20,8 @@ class User < ApplicationRecord
 
   # validates_presence_of :password true
   # validates_confirmation_of :password
+
+  def self.find_by_email(search)
+    User.where('lower(email) LIKE ?', "%#{search.downcase}%")
+  end
 end
