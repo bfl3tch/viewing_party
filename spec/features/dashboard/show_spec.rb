@@ -40,7 +40,7 @@ RSpec.describe "Dashboard Page" do
     it 'displays the friends if they exist but not other users' do
       @user1.friends << @user2
       visit dashboard_path
-      
+
       expect(page).to have_content(@user2.username)
       expect(page).to_not have_content(@user3.username)
     end
@@ -52,6 +52,7 @@ RSpec.describe "Dashboard Page" do
       click_on "Add Friend"
 
       expect(page).to have_content(@user3.username)
+      expect(current_path).to eq(dashboard_path)
     end
 
     it 'displays a message if the search for a friend was unsuccessful' do
@@ -59,10 +60,39 @@ RSpec.describe "Dashboard Page" do
 
       fill_in :search, with: "bad@email.com"
       click_on "Add Friend"
-
       expect(page).to_not have_content(@user2.username)
       expect(page).to_not have_content(@user3.username)
-      expect(page).to have_content("I'm sorry, your friend cannot be found.")
+      expect(page).to have_content("I'm sorry your friend cannot be found.")
+      expect(current_path).to eq(dashboard_path)
+    end
+
+    it 'wont let a user add themself to their own friends list' do
+      visit dashboard_path
+      fill_in :search, with: @user1.email
+      click_on "Add Friend"
+
+      within 'section#friends' do
+        expect(page).to_not have_content(@user1.username)
+      end
+
+      expect(page).to have_content("You can't add yourself as a friend.")
+      expect(current_path).to eq(dashboard_path)
+    end
+
+    it 'wont let a user add the same friend twice' do
+      visit dashboard_path
+      fill_in :search, with: @user2.email
+      click_on "Add Friend"
+
+      within 'section#friends' do
+        expect(page).to have_content(@user2.username)
+      end
+
+      expect(current_path).to eq(dashboard_path)
+      fill_in :search, with: @user2.email
+      click_on "Add Friend"
+
+      expect(page).to have_content("That friend is already...a friend.")
     end
   end
 
