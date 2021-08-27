@@ -39,6 +39,8 @@ RSpec.describe "Dashboard Page" do
 
     it 'displays the friends if they exist but not other users' do
       @user1.friends << @user2
+      visit dashboard_path
+      
       expect(page).to have_content(@user2.username)
       expect(page).to_not have_content(@user3.username)
     end
@@ -46,7 +48,7 @@ RSpec.describe "Dashboard Page" do
     it 'displays a button to add a friend by their registered email address' do
       expect(page).to_not have_content(@user3.username)
 
-      fill_in "Friend's Email", with: "yes@email.com"
+      fill_in :search, with: "yes@email.com"
       click_on "Add Friend"
 
       expect(page).to have_content(@user3.username)
@@ -55,7 +57,7 @@ RSpec.describe "Dashboard Page" do
     it 'displays a message if the search for a friend was unsuccessful' do
       expect(page).to_not have_content(@user3.username)
 
-      fill_in "Friend's Email", with: "bad@email.com"
+      fill_in :search, with: "bad@email.com"
       click_on "Add Friend"
 
       expect(page).to_not have_content(@user2.username)
