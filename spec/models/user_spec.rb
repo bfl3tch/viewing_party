@@ -22,7 +22,7 @@ RSpec.describe User do
     end
 
     describe '::find_by_email' do
-      it 'finds a user based on their email and only returns that user' do
+      xit 'finds a user based on their email and only returns that user' do
         expect(User.find_by_email(@user2.email)).to include(@user2)
         expect(User.find_by_email(@user2.email)).to_not include(@user1)
         expect(User.find_by_email(@user2.email)).to_not include(@user3)
