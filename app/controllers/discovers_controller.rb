@@ -1,6 +1,7 @@
 class DiscoversController < ApplicationController
 
   def show
-    @movies = "movie1"
+    # require "pry"; binding.pry
+    @movies = APIS::Movies.top_movies_collected_as_json
   end
 end
