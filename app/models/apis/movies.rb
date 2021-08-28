@@ -1,16 +1,11 @@
 module APIS
   class Movies
 
-    def self.top_movies_collected_as_json
+    def self.top_40_movies_array
       first = API.top_20_rated
       second = API.next_20_rated
 
-      both = first.merge(second)
-    end
-
-    def get_movie_names
-      # require "pry"; binding.pry
-      top_movies_collected_as_json
+      both = (first[:results] + second[:results])
     end
   end
 end
