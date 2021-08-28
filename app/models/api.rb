@@ -21,4 +21,9 @@ class API
     response = API.connection_setup.get("/3/movie/top_rated?&language=en-US&page=2")
     data = JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.movie_by_id(movie_id)
+    response = API.connection_setup.get("/3/movie/#{movie_id}")
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
 end
