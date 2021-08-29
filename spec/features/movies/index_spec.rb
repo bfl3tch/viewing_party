@@ -12,5 +12,18 @@ RSpec.describe "Movies index Page" do
       expect(page.status_code).to eq(200)
     end
 
+    it 'displays the movie names', :vcr do
+      expect(page).to have_content("The Godfather")
+    end
+
+    it 'displays the movie ratings', :vcr do
+      expect(page).to have_content("Rating:\n8.7")
+    end
+
+    it 'displays a function link to each movies show page', :vcr do
+      expect(page).to have_link("The Godfather")
+    end
+
+
 
 end
