@@ -3,6 +3,9 @@ require 'rails_helper'
 RSpec.describe "Movies show Page" do
   before(:each) do
     @user = create(:user, username: "StevenSpielberg", email: "stevenspielberg@email.com", password: "Tester", password_confirmation: "Tester")
+    @user2 = create(:user, username: "bob", email: "no@email.com", password: "111111", password_confirmation: "111111")
+    @user3 = create(:user, username: "frank", email: "yes@email.com", password: "111111", password_confirmation: "111111")
+
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
   end
 
@@ -83,11 +86,18 @@ RSpec.describe "Movies show Page" do
     @movie_credits = API.movie_credits(238)
     @movie_reviews = API.movie_reviews(238)
 
+    @user.friends << @user2
+
     visit movie_path(@movie)
 
     click_on "Create Event for #{@movie[:title]}"
-
     expect(current_path).to eq(new_event_path)
-    expect(page).to have_content(10000000000000)
+
+    expect(page).to have_content("Movie Title")
+    expect(page).to have_content("Duration of Event")
+    expect(page).to have_content("Day")
+    expect(page).to have_content(@user2.name)
+
+    expect(page).to_not have_content(@user3.name)
   end
 end
