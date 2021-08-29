@@ -1,0 +1,26 @@
+<div align="center">
+  <section id='friends'>
+    <h3>Friends</h3><hr/>
+    <%= form_with url: friendships_path, method: :post, class: "btn btn-warning btn-outline-primary", local: true do |f| %>
+      <%= f.label :search, "Friend's Email" %>
+      <%= f.text_field :search %>
+      <%= f.submit "Add Friend" %>
+    <% end %><br/><br/>
+
+    <% if current_user.friends.empty? %>
+      <h4>You currently have no friends.</h4>
+    <% else %>
+      <% current_user.friends.each do |friend| %>
+
+    <div align="center">
+      <div class="card navbar-custom"  style="width: 18rem;">
+        <div class="card-body">
+          <h4 class="card-title"><%= friend.username %></h4>
+          <h6 class="card-subtitle mb-2 text-muted"><h6 class="card-subtitle mb-2"> <%= friend.email %> </h6>
+        </div>
+      </div><br/>
+      <% end %>
+    <% end %>
+    </div>
+  </section>
+</div>

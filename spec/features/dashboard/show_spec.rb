@@ -94,6 +94,33 @@ RSpec.describe "Dashboard Page" do
 
       expect(page).to have_content("That friend is already...a friend.")
     end
+
+    it "shows all viewing parties user was invited to" do
+      @user1.friends << [@user2, @user3]
+      @event = create(:event, user_id: @user2.id)
+
+      @attendees = Attendee.create!(user_id: @user2.id, event_id: @event.id)
+      @attendees2 = Attendee.create!(user_id: @user1.id, event_id: @event.id)
+
+      visit dashboard_path
+
+      expect(page).to have_content(@event.title)
+      expect(page).to have_content(@event.duration)
+      expect(page).to have_content(@event.day)
+      expect(page).to have_content("Invited")
+    end
+
+    it "shows all viewing parties user was invited to" do
+      @user1.friends << [@user2, @user3]
+
+      visit dashboard_path
+
+      expect(page).to have_content(@event.title)
+      expect(page).to have_content(@event.duration)
+      expect(page).to have_content(@event.day)
+      expect(page).to have_content("Invited")
+      expect(page).to have_content(@user2.username)
+    end
   end
 
   describe 'unauthorized user functionality' do

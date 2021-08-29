@@ -1,0 +1,11 @@
+<%= form_with model: @event, method: :post, local: true do |form| %>
+  <%= form.label :title %> <br>
+  <%= form.text_field :title, readonly: true, value: @movie[:title] %> <br>
+  <%= form.label :duration %>
+  <%= form.number_field :duration, value: @movie[:runtime] %> <br>
+  <%= form.label :day %>
+  <%= form.date_select :day %> <br>
+  <%= form.label :start_time %>
+  <%= form.time_field :start_time, value: Time.now %> <br>
+  <%= form.submit "Create Party" %>
+<% end %>

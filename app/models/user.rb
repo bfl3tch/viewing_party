@@ -2,10 +2,10 @@ class User < ApplicationRecord
   has_secure_password
   # attr_accessor :password
   # validates_confirmation_of
-  has_many :events, dependent: :destroy
+  has_many :attendees, dependent: :destroy
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
-  has_many :attendees, through: :events
+  has_many :events, through: :attendees
 
   validates :username, presence: true
   validates :username, format: { with: /\A\w+\z/, message: "doesn't allow spaces or special characters" }
