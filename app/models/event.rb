@@ -8,4 +8,8 @@ class Event < ApplicationRecord
   validates :duration, presence: true, numericality: true
   validates :day, presence: true
   validates :start_time, presence: true
+
+  def determine_host
+    User.joins(:events).where('users.id = ?', self.user_id)
+  end
 end
