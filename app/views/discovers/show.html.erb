@@ -1,1 +1,9 @@
-A BUTTON NEEDS TO GO HERE
+<div align="center">
+  <br/>
+  <%= link_to "Find Top Rated Movies", '/movies?top%40rated', class: "btn btn-sm btn-dark navbar-custom blacktext"  %>
+  <br/><br/>
+  <%= form_with(url: movies_path, local: true, method: :get) do |f| %>
+    <%= f.text_field :query, label: "Search by movie title"  %>
+    <%= f.submit "Find Movies" %>
+  <% end %>
+</div>
