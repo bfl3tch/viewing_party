@@ -11,9 +11,8 @@ Rails.application.routes.draw do
 
   post '/friendships', to: 'friendships#create'
 
-  resources :users, except: [:show, :new] do
-    resources :events
-  end
+  resources :users, except: [:show, :new]
+  resources :events, only: [:new, :create]
 
   get '/dashboard', to: 'dashboard#show'
 

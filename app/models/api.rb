@@ -26,4 +26,14 @@ class API
     response = API.connection_setup.get("/3/movie/#{movie_id}")
     data = JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.movie_credits(movie_id)
+    response = API.connection_setup.get("/3/movie/#{movie_id}/credits")
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.movie_reviews(movie_id)
+    response = API.connection_setup.get("/3/movie/#{movie_id}/reviews")
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
 end
