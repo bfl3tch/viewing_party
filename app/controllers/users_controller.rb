@@ -1,15 +1,11 @@
 class UsersController < ApplicationController
   skip_before_action :user_login
-  
+
   def index;end
 
   def new
     @user = User.new
   end
-
-  # def show
-  #   @user = User.find(params[:id])
-  # end
 
   def create
     user = user_params
