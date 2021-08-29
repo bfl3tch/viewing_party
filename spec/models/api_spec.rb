@@ -32,6 +32,25 @@ RSpec.describe API do
         expect(API.next_20_rated[:results]).to_not eq(API.top_20_rated[:results])
       end
     end
+
+    describe '::movie_by_id' do
+      it 'returns a movie', :vcr do
+        expect(API.movie_by_id(238)[:title]).to eq("The Godfather")
+      end
+    end
+
+    describe '::movie_credits' do
+      it 'returns movie credits', :vcr do
+        expect(API.movie_credits(238)[:cast][0][:name]).to eq("Marlon Brando")
+        expect(API.movie_credits(238)[:cast][1][:name]).to eq("Al Pacino")
+      end
+    end
+
+    describe '::movie_reviews' do
+      it 'returns movie reviews', :vcr do
+        expect(API.movie_reviews(238)[:results][0].keys).to include(:author, :content)
+      end
+    end
   end
 
 end
