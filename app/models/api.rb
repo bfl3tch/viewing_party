@@ -36,4 +36,9 @@ class API
     response = API.connection_setup.get("/3/movie/#{movie_id}/reviews")
     data = JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.search_by_title(title)
+    response = API.connection_setup.get("/3/search/movie?query=#{title}")
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
 end
