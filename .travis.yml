@@ -8,6 +8,7 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  api_key: 994ba07d-6922-4898-8269-702a78e04526
+  api_key:
+    secure: 994ba07d-6922-4898-8269-702a78e04526
   app: virtual-watch-party
   run: rails db:migrate
