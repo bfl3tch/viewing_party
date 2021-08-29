@@ -1,6 +1,6 @@
 <br/>
 <h1 align="center">
-  Welcome <%= @user.username %>
+  Welcome <%= current_user.username %>
 </h1><br/>
 
 <h1 align="center">
@@ -14,12 +14,12 @@
       <%= f.label :search, "Friend's Email" %>
       <%= f.text_field :search %>
       <%= f.submit "Add Friend" %>
-    <% end %><br/></br>
+    <% end %><br/><br/>
 
-    <% if @user.friends.empty? %>
+    <% if current_user.friends.empty? %>
       <h4>You currently have no friends.</h4>
     <% else %>
-      <% @user.friends.each do |friend| %>
+      <% current_user.friends.each do |friend| %>
 
       <div align="center">
   <div class="card navbar-custom"  style="width: 18rem;">
