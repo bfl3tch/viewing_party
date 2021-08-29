@@ -9,9 +9,12 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/users">Users</a>
         </li>
-        <% if @user.present? %>
+        <% if current_user.present? %>
         <li class="nav-item">
           <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/movies">Movies</a>
         </li>
         <% end %>
         <li class="nav-item dropdown">
