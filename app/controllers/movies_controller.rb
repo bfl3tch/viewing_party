@@ -3,10 +3,8 @@ class MoviesController < ApplicationController
   def index
     if params[:query].present?
       @search = API.search_by_title(params[:query])
-    elsif params[:query].nil?
+    else params[:query].nil?
       @movies = APIS::Movies.top_40_movies_array
-    else
-      @movies = []
     end
   end
 
