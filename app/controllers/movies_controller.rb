@@ -13,5 +13,6 @@ class MoviesController < ApplicationController
     @movie_credits = API.movie_credits(params[:id])
     @movie_reviews = API.movie_reviews(params[:id])
     @genres = @movie[:genres].map { |genre| genre[:name] }
+    session[:movie_id] = { movie_id: @movie[:id], runtime: @movie[:runtime], title: @movie[:title] }
   end
 end
