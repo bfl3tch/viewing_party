@@ -66,7 +66,6 @@ RSpec.describe "Events new page" do
 
       expect(Event.all.count).to eq(0)
       click_on "Create Party"
-      save_and_open_page
 
       expect(Event.all.count).to eq(0)
       expect(page).to have_content("Duration can't be blank and Duration is not a number")
