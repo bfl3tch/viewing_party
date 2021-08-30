@@ -112,6 +112,10 @@ RSpec.describe "Dashboard Page" do
 
     it "shows all viewing parties user was invited to" do
       @user1.friends << [@user2, @user3]
+      @event = create(:event, user_id: @user2.id)
+
+      @attendees = Attendee.create!(user_id: @user2.id, event_id: @event.id)
+      @attendees2 = Attendee.create!(user_id: @user1.id, event_id: @event.id)
 
       visit dashboard_path
 
