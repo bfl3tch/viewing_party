@@ -51,6 +51,13 @@ RSpec.describe API do
         expect(API.movie_reviews(238)[:results][0].keys).to include(:author, :content)
       end
     end
+
+    describe '::search_by_title' do
+      it 'returns a movie that you search for', :vcr do
+        expect(API.search_by_title('Godfather')[:results].first[:title]).to include("The Godfather")
+        expect(API.search_by_title('Godfather')[:results].second[:title]).to include("The Godfather: Part II")
+      end
+    end
   end
 
 end
