@@ -91,13 +91,9 @@ RSpec.describe "Movies show Page" do
     visit movie_path(@movie)
 
     click_on "Create Event for #{@movie[:title]}"
+
     expect(current_path).to eq(new_event_path)
-
-    expect(page).to have_content("Movie Title")
-    expect(page).to have_content("Duration of Event")
-    expect(page).to have_content("Day")
-    expect(page).to have_content(@user2.name)
-
-    expect(page).to_not have_content(@user3.name)
+    expect(find_field(:title).value).to eq("#{@movie[:title]}")
+    expect(find_field(:duration).value).to eq("#{@movie[:runtime]}")
   end
 end

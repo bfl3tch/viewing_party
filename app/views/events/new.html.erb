@@ -1,11 +1,18 @@
-<%= form_with model: @event, method: :post, local: true do |form| %>
+<%= form_with url: events_path, local: true do |form| %>
+  <%= form.hidden_field :user_id, value: current_user.id %> <br>
+  <%= form.hidden_field :movie_id, value: session[:movie_id]["movie_id"] %> <br>
   <%= form.label :title %> <br>
-  <%= form.text_field :title, readonly: true, value: @movie[:title] %> <br>
+  <%= form.text_field :title, readonly: true, value: session[:movie_id]["title"] %> <br>
   <%= form.label :duration %>
-  <%= form.number_field :duration, value: @movie[:runtime] %> <br>
+  <%= form.number_field :duration, value: session[:movie_id]["runtime"] %> <br>
   <%= form.label :day %>
   <%= form.date_select :day %> <br>
   <%= form.label :start_time %>
   <%= form.time_field :start_time, value: Time.now %> <br>
+  <%= form.label :invite %>
+  <%= form.collection_check_boxes(:friends, current_user.friends, :id, :email, include_hidden: false) do |friend|  %>
+    <%= friend.label %>
+    <%= friend.check_box %>
+  <% end %>
   <%= form.submit "Create Party" %>
 <% end %>

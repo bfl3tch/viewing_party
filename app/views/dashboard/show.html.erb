@@ -13,19 +13,17 @@
 <div>
   <section id='events'>
     <% current_user.events.each do |event| %>
-      <% if current_user.id == event.user_id %>
         <%= event.title %> <br>
         <%= event.duration %>min <br>
         <%= event.day %> <br>
-        "Hosting" <br>
-      <% else %>
-        <%= event.title %> <br>
-        <%= event.duration %>min <br>
-        <%= event.day %> <br>
-        "Invited by " <%= event.determine_host.first.username %><br>
-        Attendees:
+        <% if current_user.id == event.user_id %>
+          <p>"Hosting" </p><br>
+        <% elsif current_user.id != event.user_id %>
+          <p>"Invited by " <%=event.determine_host.username %>
+        </p><br>
+        <p>Attendees:
         <% event.attendees.each do |attendee| %>
-          <%=  %>
+          <%= attendee.determine_attendee.username %></p>
         <% end %>
       <% end %>
     <% end %>
