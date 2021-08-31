@@ -16,9 +16,6 @@ Find the [project spec here](https://backend.turing.edu/module3/projects/viewing
 - [Tools Utilized](#tools-used)
 - [Contributing](#contributors)
 
-# README
-------
-
 ### <ins>Overview</ins>
 
 [Virtual Watch Party](https://virtual-watch-party.herokuapp.com/) is a 10-day, 2 person project, during Mod 3 of 4 for Turing School's Back End Engineering Program.
