@@ -1,10 +1,10 @@
 <br/>
-<div align="center">
+<div align="center" class="body" id="body">
   <%= link_to "Find Top Rated Movies", '/movies?top%40rated', class: "btn btn-sm btn-dark navbar-custom blacktext"  %><br/><br/>
 
   <%= form_with(url: movies_path, local: true, method: :get) do |f| %>
-    <%= f.text_field :query, label: "Search by Movie Title"  %>
-    <%= f.submit "Find Movies" %>
+    <%= f.text_field :query, label: "Search by Movie Title", class: "btn btn-outline-dark btn-light navbar-custom", placeholder: "ex: The Sandlot"  %>
+    <%= f.submit "Find Movies", class: "btn btn-sm btn-outline-dark btn-light navbar-custom" %>
   <% end %>
 
 </div>

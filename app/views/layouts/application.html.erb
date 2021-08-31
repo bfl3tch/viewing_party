@@ -19,6 +19,7 @@
 
   <body>
     <%= render partial: 'welcome/header', locals: { placeholder: ''} %>
+    <br/><br/><br/>
 
     <% flash.each do |type, msg| %>
       <div class="alert alert-info alert-dismissible">
@@ -29,7 +30,7 @@
     <main class='container'<br/>
       <%= yield %>
     </main><br/><br/><br/><br/><br/>
-    
+
       <%= render partial: 'welcome/footer', locals: { placeholder: ''} %>
 
   </body>
