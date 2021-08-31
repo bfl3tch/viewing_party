@@ -106,7 +106,8 @@ RSpec.describe "Dashboard Page" do
 
       expect(page).to have_content(@event.title)
       expect(page).to have_content(@event.duration)
-      expect(page).to have_content(@event.day)
+      expect(page).to have_content(@event.day.strftime("%B %d, %Y"))
+      expect(page).to have_content(@event.start_time.strftime("%l:%M %p"))
       expect(page).to have_content("Invited")
     end
 
@@ -121,7 +122,8 @@ RSpec.describe "Dashboard Page" do
 
       expect(page).to have_content(@event.title)
       expect(page).to have_content(@event.duration)
-      expect(page).to have_content(@event.day)
+      expect(page).to have_content(@event.day.strftime("%B %d, %Y"))
+      expect(page).to have_content(@event.start_time.strftime("%l:%M %p"))
       expect(page).to have_content("Invited")
       expect(page).to have_content(@user2.username)
     end
