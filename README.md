@@ -47,15 +47,15 @@ We created an application that consumes a movie database 3rd party API and allow
 ### <ins>Tools Used</ins>
 - Ruby 2.7.2
 - Rails 5.2.6
-- PostgresQL
-- BCrypt
-- Postico
-- Faraday
+- [PostgresQL](https://www.postgresql.org/)
+- [BCrypt](https://github.com/pyca/bcrypt)
+- [Postico](https://eggerapps.at/postico/)
+- [Faraday](https://github.com/lostisland/faraday)
 - [Figaro](https://github.com/laserlemon/figaro)
-- Webmock
-- VCR
-- Capybara
-- Travis CI
+- [Webmock](https://github.com/bblimke/webmock)
+- [VCR](https://github.com/vcr/vcr)
+- [Capybara](https://github.com/teamcapybara/capybara)
+- [Travis CI](https://travis-ci.org/)
 - Launchy
 - RuboCop
 - Orderly
