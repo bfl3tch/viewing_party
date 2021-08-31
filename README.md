@@ -25,7 +25,7 @@ Find the [project spec here](https://backend.turing.edu/module3/projects/viewing
 
 [Virtual Watch Party](https://virtual-watch-party.herokuapp.com/) is a 10-day, 2 person project, during Mod 3 of 4 for Turing School's Back End Engineering Program.
 
-Overview: We created an application that consumes a movie database 3rd party API and allows users to login, add friends, search for movies, get a list of recommended movies, see details about each movie, and add their friends to `Virtual-Watch-Parties` which are "dates" all watch the chosen movie at an agreed upon time.
+Overview: We created an application that consumes a movie database 3rd party API and allows users to login, add friends, search for movies, get a list of recommended movies, see details about each movie, and add their friends to `Virtual-Watch-Parties` which are "dates" to all watch the chosen movie at an agreed upon time.
 
 
 - ⭐ Consume JSON APIs that require authentication
