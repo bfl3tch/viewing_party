@@ -23,5 +23,20 @@ module APIS
       movie = MoviesService.movie_by_id(id)
       FoundMovie.new(movie)
     end
+
+    def self.get_movie_credits(id)
+      hash = MoviesService.movie_credits(id)
+      hash[:cast].first(10).map do |cast|
+        CastMember.new(cast)
+      end
+    end
+
+    def self.get_movie_reviews(id)
+      hash = MoviesService.movie_reviews(id)
+      hash[:results].map do |review|
+        MovieReview.new(review)
+      end
+    end
+
   end
 end
