@@ -25,6 +25,8 @@ Find the [project spec here](https://backend.turing.edu/module3/projects/viewing
 
 [Virtual Watch Party](https://github.com/bfl3tch/viewing_party) is a 10-day, 2 person project, during Mod 3 of 4 for Turing School's Back End Engineering Program.
 
+Overview: We created an application that consumes a movie database 3rd party API and allows users to login and add their friends to `Virtual-Watch-Parties` which are "dates" to all watch the chosen movie at an agreed upon time.
+
 - Consume JSON APIs that require authentication ⭐ ⭐ ⭐
 - Build an application that requires basic authentication ⭐ ⭐ ⭐
 - Organize and refactor code to be more maintainable ⭐ ⭐
