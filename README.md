@@ -156,6 +156,26 @@ This project requires Ruby 2.7.2.
     $ rails -v
     Rails 5.2.6
     ```
+    
+* [API access](https://github.com/bfl3tch/viewing_party/blob/main/Gemfile)
+```visit https://developers.themoviedb.org/3/getting-started/introduction
+- Signup for an account
+- To register for an API key, click the  from within your account settings page. You can also view the screenshots below for help:
+  - Click on your avatar or initials in the main navigation
+  - Click the "Settings" link
+  - Click the "API" link in the left sidebar
+  - Click "Create" or "click here" on the API page
+- We will be using the `v4` token.
+```
+    
+* [API access setup](https://github.com/bfl3tch/viewing_party/blob/main/Gemfile)
+```bash
+$ gem install figaro
+$ bundle exec figaro install
+open the new hidden file `application.yml`
+set `movie_api_key: <<Bearer (your bearer token)>>`
+Rails 5.2.6
+```
 
 * Database creation
     ```bash
