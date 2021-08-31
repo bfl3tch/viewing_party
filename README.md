@@ -118,20 +118,7 @@ Things you may want to cover:
 
 * ... -->
 
-
-# Virtual Watch Party
-
-
-## Requirement Overview
-### Use RuboCop in project to enforce style guide
-### Deploy to Heroku
-### Use TravisCI for Continuous Integration
-### Consume The Movie DB API
-### Implement Basic Auth
-### ActionMailer
-
-#### Use co-authored commits when doing driver/navigator pairing.
-
+![Screen Shot 2021-08-26 at 2 42 02 PM](https://user-images.githubusercontent.com/74567704/131439838-b4676308-58f6-4471-9b61-760dd16308b7.png)
 ##### A note about friendships
 ###### The user story about adding friends states that if User A and User B are in the database and User A adds User B as a friend, then that friendship is confirmed, and User A can now invite User B to a Viewing Party. It does not explicitly state that User B must also add User A as a friend. Think of this like a Twitter “follow” relationship: if I follow you, I can invite you to a Viewing Party, but you can’t invite me to a party unless you follow me first.
 
