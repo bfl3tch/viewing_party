@@ -48,13 +48,22 @@ We created an application that consumes a movie database 3rd party API and allow
 
 |Development|Development|Testing|Deployment
 |--- |--- |--- |--- |
-|[Ruby 2.7.2](https://www.ruby-lang.org/en/downloads/)||[Bootstrap](https://rubygems.org/gems/bootstrap/versions/4.0.0)|[RSpec for Rails](https://github.com/rspec/rspec-rails)|[Pry](https://rubygems.org/gems/pry/versions/0.10.3)||[Heroku](virtual-watch-party.herokuapp.com)|
-|[Rails 5.2.6](https://rubygems.org/gems/rails/versions/5.2.6)||[Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)|[Capybara](https://github.com/teamcapybara/capybara)|[Github](https://desktop.github.com/)||[Travis CI](https://travis-ci.org/)|
+
+|[Ruby 2.7.2](https://www.ruby-lang.org/en/downloads/)|[Bootstrap](https://rubygems.org/gems/bootstrap/versions/4.0.0)|[RSpec for Rails](https://github.com/rspec/rspec-rails)|[Heroku](virtual-watch-party.herokuapp.com)|
+
+|[Pry](https://rubygems.org/gems/pry/versions/0.10.3)||[Github](https://desktop.github.com/)||||
+|[Rails 5.2.6](https://rubygems.org/gems/rails/versions/5.2.6)|[Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)|[Capybara](https://github.com/teamcapybara/capybara)|[Travis CI](https://travis-ci.org/)|
+
 |[PostgresQL](https://www.postgresql.org/)|[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)||[Webmock](https://github.com/bblimke/webmock)
+
 |[BCrypt](https://github.com/pyca/bcrypt)|[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)||[VCR](https://github.com/vcr/vcr)
+
 |[Postico](https://eggerapps.at/postico/)|[Rubocop](https://rubygems.org/gems/rubocop/versions/0.39.0)||[Launchy](https://rubygems.org/gems/launchy/versions/2.4.3)
+
 |[Faraday](https://github.com/lostisland/faraday)|[Atom](https://atom.io/)||[Orderly](https://github.com/jmondo/orderly)
+
 |[Figaro](https://github.com/laserlemon/figaro)|[SimpleCov](https://rubygems.org/gems/simplecov/versions/0.12.0)
+
 |[Postman](https://www.postman.com/product/rest-client/)|[FactoryBot](https://github.com/thoughtbot/factory_bot)
 
 
