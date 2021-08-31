@@ -27,19 +27,18 @@ Find the [project spec here](https://backend.turing.edu/module3/projects/viewing
 
 Overview: We created an application that consumes a movie database 3rd party API and allows users to login and add their friends to `Virtual-Watch-Parties` which are "dates" to all watch the chosen movie at an agreed upon time.
 
-- Consume JSON APIs that require authentication ⭐ ⭐ ⭐
-- Build an application that requires basic authentication ⭐ ⭐ ⭐
-- Organize and refactor code to be more maintainable ⭐ ⭐
-- Implement a self-referential relationship in ActiveRecord ⭐ ⭐
-- Apply RuboCop’s style guide for code quality ⭐
-- Utilize Continuous Integration using Travis CI ⭐
-- Deploy to Heroku ⭐
-- Apply principles of flow control across multiple methods
-- Design a self referential relationship using a schema designer
-- Write migrations to create tables with columns of varying data types and foreign keys.
-- Use Rails to create web pages that allow users to CRUD resources
-- Create instance and class methods on a Rails model that use ActiveRecord methods and helpers
-- Write model and feature tests that fully cover data logic and potential user behavior
+⭐ Consume JSON APIs that require authentication
+⭐ Build an application that requires basic authentication
+⭐ Organize and refactor code to be more maintainable
+⭐ Implement a self-referential relationship in ActiveRecord
+⭐ Utilize Continuous Integration using Travis CI
+⭐ Deploy to Heroku
+⭐ Apply principles of flow control across multiple methods
+⭐ Write migrations to create tables with columns of varying data types and foreign keys
+⭐ Use Rails to create web pages that allow users to CRUD resources
+⭐ Create instance and class methods on a Rails model that use ActiveRecord methods and helpers
+⭐ Write model and feature tests that fully cover data logic and potential user behavior
+⭐ Apply RuboCop’s style guide for code quality
 
 [Technical Requirements](https://backend.turing.edu/module3/projects/viewing_party/requirements)
 
@@ -74,7 +73,7 @@ Overview: We created an application that consumes a movie database 3rd party API
 - Github: [Brian Fletcher](https://github.com/bfl3tch)
 - LinkedIn: [Brian Fletcher](https://www.linkedin.com/in/bfl3tch)
 
-👤  **Elliot Olbright**
+👤  **Jason Knoll**
 - Github: [Jason Knoll](https://github.com/JasonPKnoll)
 - LinkedIn: [Jason Knoll](https://www.linkedin.com/in/jason-p-knoll/)
 
