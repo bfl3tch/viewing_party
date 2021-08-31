@@ -1,15 +1,15 @@
 <h1 align="center">
-  # Welcome to Virtual Watch Party
+   Welcome to Virtual Watch Party
 </h1>
 
   [![Contributors][contributors-shield]][contributors-url]
   [![Issues][issues-shield]][issues-url]
   [![Stargazers][stars-shield]][stars-url]
   [![Forks][forks-shield]][forks-url]
-
+<h3 align="center">
   The application that brings people together
   But keeps them apart
-
+</h3>
 
   Find the [project spec here](https://backend.turing.edu/module3/projects/viewing_party/index).
   ## Table of Contents
@@ -47,7 +47,7 @@
   [Technical Requirements](https://backend.turing.edu/module3/projects/viewing_party/requirements)
 
   ### <ins>Tools Used</ins>
-
+<p align="center">
   |Development|Development|Testing|Deployment
   |--- |--- |--- |--- |
   |[Ruby 2.7.2](https://www.ruby-lang.org/en/downloads/)|[Bootstrap](https://rubygems.org/gems/bootstrap/versions/4.0.0)|[RSpec for Rails](https://github.com/rspec/rspec-rails)|[Heroku](http://virtual-watch-party.herokuapp.com)|
@@ -59,7 +59,7 @@
   |[Faraday](https://github.com/lostisland/faraday)|[Atom](https://atom.io/)|[SimpleCov](https://rubygems.org/gems/simplecov/versions/0.12.0)
   |[Figaro](https://github.com/laserlemon/figaro)|[FactoryBot](https://github.com/thoughtbot/factory_bot)
   |[Postman](https://www.postman.com/product/rest-client/)|
-
+</p>
 
 
 
