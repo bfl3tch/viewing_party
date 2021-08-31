@@ -51,7 +51,7 @@ We created an application that consumes a movie database 3rd party API and allow
 - BCrypt
 - Postico
 - Faraday
-- Figaro
+- [Figaro](https://github.com/laserlemon/figaro)
 - Webmock
 - VCR
 - Capybara
@@ -157,7 +157,7 @@ This project requires Ruby 2.7.2.
     Rails 5.2.6
     ```
     
-* [API access](https://github.com/bfl3tch/viewing_party/blob/main/Gemfile)
+* [API access](https://developers.themoviedb.org/3/getting-started/introduction)
 ```visit https://developers.themoviedb.org/3/getting-started/introduction
 - Signup for an account
 - To register for an API key, click the  from within your account settings page. You can also view the screenshots below for help:
@@ -168,7 +168,7 @@ This project requires Ruby 2.7.2.
 - We will be using the `v4` token.
 ```
     
-* [API access setup](https://github.com/bfl3tch/viewing_party/blob/main/Gemfile)
+* [API access setup](https://github.com/laserlemon/figaro)
 ```bash
 $ gem install figaro
 $ bundle exec figaro install
