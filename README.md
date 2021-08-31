@@ -41,6 +41,13 @@ We created an application that consumes a movie database 3rd party API and allow
 
 ![Schema Layout](https://user-images.githubusercontent.com/74567704/131439838-b4676308-58f6-4471-9b61-760dd16308b7.png)
 
+|Month|Savings|Spending|
+|--- |--- |--- |
+|January|$100|$900|
+|July|$750|$1000|
+|December|$250|$300|
+|April|$400|$700|
+
 
 [Technical Requirements](https://backend.turing.edu/module3/projects/viewing_party/requirements)
 
