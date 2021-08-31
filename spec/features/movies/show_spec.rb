@@ -10,21 +10,21 @@ RSpec.describe "Movies show Page" do
   end
 
   it 'returns the page without error', :vcr do
-    @movie = API.movie_by_id(238)
+    @movie = MoviesService.movie_by_id(238)
 
     visit movie_path(@movie)
     expect(page.status_code).to eq(200)
   end
 
   it 'returns the page with movie title', :vcr do
-    @movie = API.movie_by_id(238)
+    @movie = MoviesService.movie_by_id(238)
 
     visit movie_path(@movie)
     expect(page).to have_content(@movie[:title])
   end
 
   it 'returns the page with movie attributes', :vcr do
-    @movie = API.movie_by_id(238)
+    @movie = MoviesService.movie_by_id(238)
 
     visit movie_path(@movie)
 
@@ -35,7 +35,7 @@ RSpec.describe "Movies show Page" do
   end
 
   it 'returns the page with movie genres', :vcr do
-    @movie = API.movie_by_id(238)
+    @movie = MoviesService.movie_by_id(238)
 
     visit movie_path(@movie)
 
@@ -44,8 +44,8 @@ RSpec.describe "Movies show Page" do
   end
 
   it 'returns the page with the first 10 movie cast members', :vcr do
-    @movie = API.movie_by_id(238)
-    @movie_credits = API.movie_credits(238)
+    @movie = MoviesService.movie_by_id(238)
+    @movie_credits = MoviesService.movie_credits(238)
 
     visit movie_path(@movie)
 
@@ -63,8 +63,8 @@ RSpec.describe "Movies show Page" do
   end
 
   it 'returns the page with the movie reviews', :vcr do
-    @movie = API.movie_by_id(238)
-    @movie_reviews = API.movie_reviews(238)
+    @movie = MoviesService.movie_by_id(238)
+    @movie_reviews = MoviesService.movie_reviews(238)
 
     visit movie_path(@movie)
 
@@ -73,8 +73,8 @@ RSpec.describe "Movies show Page" do
   end
 
   it 'returns the page with the total movie reviews', :vcr do
-    @movie = API.movie_by_id(238)
-    @movie_reviews = API.movie_reviews(238)
+    @movie = MoviesService.movie_by_id(238)
+    @movie_reviews = MoviesService.movie_reviews(238)
 
     visit movie_path(@movie)
 
@@ -82,9 +82,9 @@ RSpec.describe "Movies show Page" do
   end
 
   it 'can create a viewing party', :vcr do
-    @movie = API.movie_by_id(238)
-    @movie_credits = API.movie_credits(238)
-    @movie_reviews = API.movie_reviews(238)
+    @movie = MoviesService.movie_by_id(238)
+    @movie_credits = MoviesService.movie_credits(238)
+    @movie_reviews = MoviesService.movie_reviews(238)
 
     @user.friends << @user2
 

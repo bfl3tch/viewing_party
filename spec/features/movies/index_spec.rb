@@ -23,4 +23,17 @@ RSpec.describe "The Movies Index page" do
   it 'displays a function link to each movies show page', :vcr do
     expect(page).to have_link("The Godfather")
   end
+
+  it 'has a search functionality', :vcr do
+    expect(page).to have_field("query")
+  end
+
+  it 'displays all movies that are associated with a search that isnt case sensitive', :vcr do
+    fill_in "query", with: 'goDFAther'
+    click_on "Find Movies"
+
+    expect(page).to have_content("The Godfather")
+    expect(page).to have_content("The Godfather: Part II")
+    expect(page).to have_content("The Godfather: Part III")
+  end
 end
