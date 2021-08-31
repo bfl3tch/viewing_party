@@ -15,15 +15,20 @@
     <% current_user.events.each do |event| %>
         <%= event.title %> <br>
         <%= event.duration %>min <br>
-        <%= event.day %> <br>
+        <%= event.day.strftime("%B %d, %Y") %> <br>
+        <%= event.start_time.strftime("%l:%M %p") %> <br>
         <% if current_user.id == event.user_id %>
-          <p>"Hosting" </p><br>
+          <p>Hosting </p><br>
         <% elsif current_user.id != event.user_id %>
-          <p>"Invited by " <%=event.determine_host.username %>
+          <p>Invited by  <%=event.determine_host.username %>
         </p><br>
-        <p>Attendees:
+        <p>Attendees: <br>
         <% event.attendees.each do |attendee| %>
-          <%= attendee.determine_attendee.username %></p>
+          <% if attendee.determine_attendee.id == current_user.id %>
+            <b><%= attendee.determine_attendee.username %></b>
+          <% else %>
+            <%= attendee.determine_attendee.username %></p>
+          <% end %> <br>
         <% end %>
       <% end %>
     <% end %>
