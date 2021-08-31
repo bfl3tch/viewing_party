@@ -41,6 +41,8 @@ Overview: We created an application that consumes a movie database 3rd party API
 - ⭐ Write model and feature tests that fully cover data logic and potential user behavior
 - ⭐ Apply RuboCop’s style guide for code quality
 
+![Schema Layout](https://user-images.githubusercontent.com/74567704/131439838-b4676308-58f6-4471-9b61-760dd16308b7.png)
+
 
 [Technical Requirements](https://backend.turing.edu/module3/projects/viewing_party/requirements)
 
@@ -118,7 +120,7 @@ Things you may want to cover:
 
 * ... -->
 
-![Screen Shot 2021-08-26 at 2 42 02 PM](https://user-images.githubusercontent.com/74567704/131439838-b4676308-58f6-4471-9b61-760dd16308b7.png)
+
 ##### A note about friendships
 ###### The user story about adding friends states that if User A and User B are in the database and User A adds User B as a friend, then that friendship is confirmed, and User A can now invite User B to a Viewing Party. It does not explicitly state that User B must also add User A as a friend. Think of this like a Twitter “follow” relationship: if I follow you, I can invite you to a Viewing Party, but you can’t invite me to a party unless you follow me first.
 
