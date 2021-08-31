@@ -19,17 +19,20 @@
 
   <body>
     <%= render partial: 'welcome/header', locals: { placeholder: ''} %>
+    <br/><br/><br/>
 
     <% flash.each do |type, msg| %>
-      <div class="alert alert-info alert-dismissible">
-        <%= msg %>
+    <div align="center">
+      <div class="alert alert-info alert-dismissible btn btn-lg navbar-custom">
+        <%= msg  %>
       </div>
+    </div>
     <% end %>
 
     <main class='container'<br/>
       <%= yield %>
     </main><br/><br/><br/><br/><br/>
-    
+
       <%= render partial: 'welcome/footer', locals: { placeholder: ''} %>
 
   </body>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/registration', to: "users#new"
   post '/registration', to: "users#create"
-
+  get '/about', to: "welcome#show"
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

@@ -1,23 +1,43 @@
-
-<h1><%= @movie.title %>
-<span align="right">
-  <%= link_to "Create Event for #{@movie.title}", new_event_path, method: :get, class: "btn btn-info btn-outline-dark" %>
-</span></h1>
-
-<p><b>Vote Average: </b><%= @movie.vote_average %></p>
-<p><b>Runtime: </b><%= @movie.runtime / 60 %>hr <%= @movie.runtime % 60 %>min </p>
-<p><b>Genres: </b><%= @genres.join(", ") %>
-
-<h2>Summary</h2>
-<p><%= @movie.overview %></p>
-
-<h2>Cast</h2>
-<% @movie_credits.each do |member| %>
-  <h3><%= member.name %> as <%= member.character %></h3>
-<% end %>
-
-<h2> <%= @movie_reviews.count %> Reviews</h2>
-<h2><% @movie_reviews.each do |review| %></h2>
-  <h3>Author: <%= review.author %></h3>
-  <h3><%= review.content %></h3>
-<% end %>
+<br/>
+<div align="center">
+  <div class="card navbar-custom" style="width: 60rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= link_to "Create Event for #{@movie.title}", new_event_path, method: :get, class: "btn btn-info navbar-custom btn-outline-dark" %>
+      </h5><br/>
+      <h6 class="card-subtitle mb-2">
+        <strong>Rating: </strong><%= @movie.vote_average %><br/><br/>
+        <b>Runtime: </b><%= @movie.runtime / 60 %>hr <%= @movie.runtime % 60 %>min<br/><br/>
+        <b>Genres: </b><%= @genres.join(", ") %><br/><br/>
+      </h6>
+        <% if @movie.image %>
+          <h6 class="card-subtitle mb-2">
+            <img src="<%= @movie.image %>" width=60%>
+          </h6>
+          <h4 class="card-subtitle mb-2">
+            Summary: <br><br/>
+            <%= @movie.overview %>
+          </h4><br/>
+          <h5 class="card-subtitle mb-2">
+            Cast: <br/><br/>
+              <% @movie_credits.each do |member| %>
+                - <%= member.name %> as <%= member.character %><br/>
+              <% end %>
+          </h5>
+    </div>
+  </div>
+  <br/><br/>
+  <div class="card navbar-custom" style="width: 60rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= @movie_reviews.count %> Reviews
+      </h5><br/>
+        <% @movie_reviews.each do |review| %>
+          <h6 class="card-subtitle mb-2">
+              Author: <%= review.author %><br/><br/>
+              <p><%= review.content %></p>
+          <% end %>
+      <% end %>
+    </div>
+  </div><br/>
+</div>

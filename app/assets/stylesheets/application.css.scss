@@ -32,16 +32,27 @@ main {
 
 footer {
   display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   align-self: baseline;
   flex-direction: row;
-  background-color: black;
-  color: white;
+  background-color: #B9B5B475;
+  color: blacktext;
+  flex-grow: 0
 }
 
 navbar-nav.navbar-center {
 	position: absolute;
 	left: 50%;
 	transform: translatex(-50%);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #B9B5B475;
 }
 
 .navbar-custom {

@@ -1,4 +1,8 @@
-<br/>
+<br/><h1 align="center">
+  <div align="center">
+    <div class="card navbar-custom" style="width: 60rem;">
+      <div class="card-body">
+        <h5 class="card-title">
 <h1 align="center">Welcome to Virtual Watch Party</h1><br/><br/>
 
 <% if !logged_in? %>
@@ -6,15 +10,15 @@
   <div align="center">
     <%= form_with url: login_path, method: :post, local: true do |form| %>
       <%= form.label :username, "Username:" %>
-      <%= form.text_field :username %><br/><br/>
+      <%= form.text_field :username, class: "btn btn-lg btn-outline-dark btn-light navbar-custom", size: 50 %><br/><br/>
       <%= form.label :password, "Password:" %>
-      <%= form.password_field :password %><br/><br/>
-      <%= form.submit "Log In" %>
+      <%= form.password_field :password, class: "btn btn-lg btn-outline-dark btn-light navbar-custom", size: 50 %><br/><br/>
+      <%= form.submit "Log In", class: "btn btn-lg btn-outline-dark btn-light navbar-custom" %>
     <% end %>
   </div><br/><br/>
 
   <div align="center">
-    <%= link_to "New to Virtual Watch Party? Register Here", registration_path, class: 'btn btn-outline-dark' %>
+    <%= link_to "New to Virtual Watch Party? Register Here", registration_path, class: 'btn btn-dark btn-outline-danger' %>
   </div>
 
 <% else %>

@@ -1,5 +1,5 @@
 <br/>
-<div align="center">
+<div align="center" id="body">
   <div class="card navbar-custom"  style="width: 18rem;">
     <div class="card-body">
       <h1 class="card-title">
@@ -18,7 +18,12 @@
         </h5>
         <h6 class="card-subtitle mb-2">
           Rating: <%= movie.vote_average %>
+        </h6>
+        <% if movie.image %>
+          <h6 class="card-subtitle mb-2">
+            <img src="<%= movie.image %>" width=40%>
           </h6>
+        <% end %>
       </div>
     </div>
     <br/>

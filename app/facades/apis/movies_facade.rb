@@ -6,7 +6,6 @@ module APIS
       second = MoviesService.next_20_rated
 
       both = (first[:results] + second[:results])
-
       both.map do |movie|
         TopFortyMovies.new(movie)
       end

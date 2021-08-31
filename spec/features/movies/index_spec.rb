@@ -29,8 +29,8 @@ RSpec.describe "The Movies Index page" do
   end
 
   it 'displays all movies that are associated with a search that isnt case sensitive', :vcr do
-    fill_in "query", with: 'goDFAther'
-    click_on "Find Movies"
+    find('div#body').fill_in "query", with: 'goDFAther'
+    find('div#body').click_on "Find Movies"
 
     expect(page).to have_content("The Godfather")
     expect(page).to have_content("The Godfather: Part II")
