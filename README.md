@@ -174,8 +174,7 @@
       $ gem install figaro
       $ bundle exec figaro install
       open the new hidden file `application.yml`
-      set `movie_api_key: <<Bearer (your bearer token)>>`
-      Rails 5.2.6
+      set `movie_api_key: <<Bearer (your v4 token)>>`
       ```
 
   * Database creation
