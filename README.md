@@ -1,11 +1,12 @@
 <h1 align="center">
    Welcome to Virtual Watch Party
 </h1>
-
+<p align="center">
   [![Contributors][contributors-shield]][contributors-url]
   [![Issues][issues-shield]][issues-url]
   [![Stargazers][stars-shield]][stars-url]
   [![Forks][forks-shield]][forks-url]
+</p>
 <h3 align="center">
   The application that brings people together
 </h3>
