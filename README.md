@@ -41,40 +41,35 @@ We created an application that consumes a movie database 3rd party API and allow
 
 ![Schema Layout](https://user-images.githubusercontent.com/74567704/131439838-b4676308-58f6-4471-9b61-760dd16308b7.png)
 
-|Month|Savings|Spending|
-|--- |--- |--- |
-|January|$100|$900|
-|July|$750|$1000|
-|December|$250|$300|
-|April|$400|$700|
-
-
 [Technical Requirements](https://backend.turing.edu/module3/projects/viewing_party/requirements)
 
 ### <ins>Tools Used</ins>
-- Ruby 2.7.2
-- Rails 5.2.6
-- [PostgresQL](https://www.postgresql.org/)
-- [BCrypt](https://github.com/pyca/bcrypt)
-- [Postico](https://eggerapps.at/postico/)
-- [Faraday](https://github.com/lostisland/faraday)
-- [Figaro](https://github.com/laserlemon/figaro)
-- [Webmock](https://github.com/bblimke/webmock)
-- [VCR](https://github.com/vcr/vcr)
-- [Capybara](https://github.com/teamcapybara/capybara)
-- [Travis CI](https://travis-ci.org/)
-- Launchy
-- RuboCop
-- Orderly
-- SimpleCov
-- FactoryBot
-- Git/GitHub
-- HTML
-- CSS
-- Bootstrap
-- RSpec
-- Pry
-- Atom
+
+|Development|Testing|Deployment
+|--- |--- |--- |
+|[Ruby 2.7.2](https://www.ruby-lang.org/en/downloads/)|[RSpec for Rails](https://github.com/rspec/rspec-rails)|[Heroku](www.heroku.com)|
+|[Rails 5.2.6](https://rubygems.org/gems/rails/versions/5.2.6)|[Capybara](https://github.com/teamcapybara/capybara)|[Travis CI](https://travis-ci.org/)|
+|[PostgresQL](https://www.postgresql.org/)|[Webmock](https://github.com/bblimke/webmock)
+|[BCrypt](https://github.com/pyca/bcrypt)|[VCR](https://github.com/vcr/vcr)
+|[Postico](https://eggerapps.at/postico/)|[Launchy](url)
+|[Faraday](https://github.com/lostisland/faraday)|[Orderly](url)
+|[Figaro](https://github.com/laserlemon/figaro)|[SimpleCov](url)
+|[Postman](postmanurl)|[FactoryBot](url)
+|[Bootstrap](url)
+|[Pry](url)
+|[Git](url)
+|[Github](url)
+|[HTML](url)
+|[CSS](url)
+|[Rubocop](https://eggerapps.at/postico/)
+|[Atom](https://eggerapps.at/postico/)
+
+
+
+
+
+
+
 
 ### <ins>Contributors</ins>
 
