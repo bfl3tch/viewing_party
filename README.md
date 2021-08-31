@@ -1,5 +1,6 @@
-<p align="center">
+<h1 align="center">
   # Welcome to Virtual Watch Party
+</h1>
 
   [![Contributors][contributors-shield]][contributors-url]
   [![Issues][issues-shield]][issues-url]
@@ -18,7 +19,7 @@
   - [Contributing](#contributors)
   - [Setup](#setup)
 
-  ### <ins>Overview</ins>
+  ### <ins align="center">Overview</ins>
 
   [Virtual Watch Party](https://virtual-watch-party.herokuapp.com/) is a 10-day, 2 person project, during Mod 3 of 4 for Turing School's Back End Engineering Program.
 
@@ -201,4 +202,3 @@
       ```
 
   * [Heroku Deployment](https://virtual-watch-party.herokuapp.com/), for production
-</p>
