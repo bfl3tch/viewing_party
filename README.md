@@ -13,7 +13,10 @@
 <h4 align="center">
   But keeps them apart
 </h4>
-
+   <p align="center">
+      <img src="https://user-images.githubusercontent.com/74567704/131546296-15f81ff9-349e-4e6b-b32d-caa329236a6b.jpg">
+   </p>
+   
   Find the [project spec here](https://backend.turing.edu/module3/projects/viewing_party/index).
   ## Table of Contents
 
