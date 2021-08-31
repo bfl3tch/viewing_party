@@ -15,6 +15,7 @@ Find the [project spec here](https://backend.turing.edu/module3/projects/viewing
 - [Overview](#overview)
 - [Tools Utilized](#tools-used)
 - [Contributing](#contributors)
+- [Setup](#setup)
 
 ### <ins>Overview</ins>
 
@@ -124,7 +125,7 @@ Things you may want to cover:
 ##### A note about friendships
 ###### The user story about adding friends states that if User A and User B are in the database and User A adds User B as a friend, then that friendship is confirmed, and User A can now invite User B to a Viewing Party. It does not explicitly state that User B must also add User A as a friend. Think of this like a Twitter “follow” relationship: if I follow you, I can invite you to a Viewing Party, but you can’t invite me to a party unless you follow me first.
 
-## Setup
+## <ins>Setup</ins>
 
 This project requires Ruby 2.7.2.
 
