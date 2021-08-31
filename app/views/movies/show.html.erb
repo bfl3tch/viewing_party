@@ -12,12 +12,12 @@
 <p><%= @movie.overview %></p>
 
 <h2>Cast</h2>
-<% @movie_credits[:cast].first(10).each do |member| %>
-  <h3><%= member[:name] %> as <%= member[:character] %></h3>
+<% @movie_credits.each do |member| %>
+  <h3><%= member.name %> as <%= member.character %></h3>
 <% end %>
 
-<h2> <%= @movie_reviews[:results].count %> Reviews</h2>
-<h2><% @movie_reviews[:results].each do |review| %></h2>
-  <h3>Author: <%= review[:author] %></h3>
-  <h3><%= review[:content] %></h3>
+<h2> <%= @movie_reviews.count %> Reviews</h2>
+<h2><% @movie_reviews.each do |review| %></h2>
+  <h3>Author: <%= review.author %></h3>
+  <h3><%= review.content %></h3>
 <% end %>

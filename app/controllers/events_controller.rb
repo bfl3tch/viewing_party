@@ -8,14 +8,13 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    # require "pry"; binding.pry
     if @event.save && params[:friends]
-      params[:friends].each { |f| Attendee.create(user_id: f.to_i, event_id: @event.id) }
-      Attendee.create(user_id: current_user.id, event_id: @event.id)
+      EventsFacade.create_attendees(params[:friends], @event)
+      EventsFacade.create_attendee(current_user, @event)
       redirect_to dashboard_path, flash: { notice: "Virtual Watch Party for #{@event.title} Created!" }
       session[:movie_id] = nil
     elsif @event.save
-      Attendee.create(user_id: current_user.id, event_id: @event.id)
+      EventsFacade.create_attendee(current_user, @event)
       redirect_to dashboard_path, flash: { notice: "Virtual Watch Party for #{@event.title} Created!" }
       session[:movie_id] = nil
     else
