@@ -47,22 +47,22 @@ We created an application that consumes a movie database 3rd party API and allow
 
 |Development|Testing|Deployment
 |--- |--- |--- |
-|[Ruby 2.7.2](https://www.ruby-lang.org/en/downloads/)|[RSpec for Rails](https://github.com/rspec/rspec-rails)|[Heroku](www.heroku.com)|
+|[Ruby 2.7.2](https://www.ruby-lang.org/en/downloads/)|[RSpec for Rails](https://github.com/rspec/rspec-rails)|[Heroku](virtual-watch-party.herokuapp.com)|
 |[Rails 5.2.6](https://rubygems.org/gems/rails/versions/5.2.6)|[Capybara](https://github.com/teamcapybara/capybara)|[Travis CI](https://travis-ci.org/)|
 |[PostgresQL](https://www.postgresql.org/)|[Webmock](https://github.com/bblimke/webmock)
 |[BCrypt](https://github.com/pyca/bcrypt)|[VCR](https://github.com/vcr/vcr)
-|[Postico](https://eggerapps.at/postico/)|[Launchy](url)
-|[Faraday](https://github.com/lostisland/faraday)|[Orderly](url)
-|[Figaro](https://github.com/laserlemon/figaro)|[SimpleCov](url)
-|[Postman](postmanurl)|[FactoryBot](url)
-|[Bootstrap](url)
-|[Pry](url)
-|[Git](url)
-|[Github](url)
+|[Postico](https://eggerapps.at/postico/)|[Launchy](https://rubygems.org/gems/launchy/versions/2.4.3)
+|[Faraday](https://github.com/lostisland/faraday)|[Orderly](https://github.com/jmondo/orderly)
+|[Figaro](https://github.com/laserlemon/figaro)|[SimpleCov](https://rubygems.org/gems/simplecov/versions/0.12.0)
+|[Postman](https://www.postman.com/product/rest-client/)|[FactoryBot](https://github.com/thoughtbot/factory_bot)
+|[Bootstrap](https://rubygems.org/gems/bootstrap/versions/4.0.0)
+|[Pry](https://rubygems.org/gems/pry/versions/0.10.3)
+|[Git](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+|[Github](https://desktop.github.com/)
 |[HTML](url)
 |[CSS](url)
-|[Rubocop](https://eggerapps.at/postico/)
-|[Atom](https://eggerapps.at/postico/)
+|[Rubocop](https://rubygems.org/gems/rubocop/versions/0.39.0)
+|[Atom](https://atom.io/)
 
 
 
