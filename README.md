@@ -164,7 +164,7 @@ This project requires Ruby 2.7.2.
     ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin20]
     ```
 
-* [System dependencies](https://github.com/bfl3tch/little-esty-shop/blob/main/Gemfile)
+* [System dependencies](https://github.com/bfl3tch/viewing_party/blob/main/Gemfile)
     ```bash
     $ rails -v
     Rails 5.2.6
@@ -173,8 +173,8 @@ This project requires Ruby 2.7.2.
 * Database creation
     ```bash
     $ rails db:{drop,create,migrate,seed}
-    Created database 'little_esty_shop_development'
-    Created database 'little_esty_shop_test'
+    Created database 'viewing_party_development'
+    Created database 'viewing_party_test'
     ```
 
 * How to run the test suite
