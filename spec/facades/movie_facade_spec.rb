@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe APIS::Movies do
+RSpec.describe APIS::MoviesFacade do
   before(:each) do
     @user = create(:user, username: "StevenSpielberg", email: "stevenspielberg@email.com", password: "Tester", password_confirmation: "Tester")
 
@@ -9,8 +9,8 @@ RSpec.describe APIS::Movies do
 
   describe 'class methods' do
     describe '::top_40_movies_array' do
-      it 'combines the two API calls into a single results array of the 40 movies data', :vcr do
-        expect(APIS::Movies.top_40_movies_array.count).to eq(40)
+      it 'combines the two MoviesService calls into a single results array of the 40 movies data', :vcr do
+        expect(APIS::MoviesFacade.top_40_movies_array.count).to eq(40)
 
       end
     end

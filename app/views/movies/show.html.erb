@@ -1,15 +1,15 @@
 
-<h1><%= @movie[:title] %>
+<h1><%= @movie.title %>
 <span align="right">
-  <%= link_to "Create Event for #{@movie[:title]}", new_event_path, method: :get, class: "btn btn-info btn-outline-dark" %>
+  <%= link_to "Create Event for #{@movie.title}", new_event_path, method: :get, class: "btn btn-info btn-outline-dark" %>
 </span></h1>
 
-<p><b>Vote Average: </b><%= @movie[:vote_average] %></p>
-<p><b>Runtime: </b><%= @movie[:runtime] / 60 %>hr <%= @movie[:runtime] % 60 %>min </p>
+<p><b>Vote Average: </b><%= @movie.vote_average %></p>
+<p><b>Runtime: </b><%= @movie.runtime / 60 %>hr <%= @movie.runtime % 60 %>min </p>
 <p><b>Genres: </b><%= @genres.join(", ") %>
 
 <h2>Summary</h2>
-<p><%= @movie[:overview] %></p>
+<p><%= @movie.overview %></p>
 
 <h2>Cast</h2>
 <% @movie_credits[:cast].first(10).each do |member| %>

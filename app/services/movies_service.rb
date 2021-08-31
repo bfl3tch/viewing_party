@@ -1,9 +1,7 @@
 require 'faraday'
 require 'json'
 
-class API
-  def initialize
-  end
+class MoviesService
 
   def self.connection_setup
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
@@ -13,32 +11,32 @@ class API
   end
 
   def self.top_20_rated
-    response = API.connection_setup.get("/3/movie/top_rated?&language=en-US&page=1")
+    response = MoviesService.connection_setup.get("/3/movie/top_rated?&language=en-US&page=1")
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.next_20_rated
-    response = API.connection_setup.get("/3/movie/top_rated?&language=en-US&page=2")
+    response = MoviesService.connection_setup.get("/3/movie/top_rated?&language=en-US&page=2")
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.movie_by_id(movie_id)
-    response = API.connection_setup.get("/3/movie/#{movie_id}")
+    response = MoviesService.connection_setup.get("/3/movie/#{movie_id}")
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.movie_credits(movie_id)
-    response = API.connection_setup.get("/3/movie/#{movie_id}/credits")
+    response = MoviesService.connection_setup.get("/3/movie/#{movie_id}/credits")
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.movie_reviews(movie_id)
-    response = API.connection_setup.get("/3/movie/#{movie_id}/reviews")
+    response = MoviesService.connection_setup.get("/3/movie/#{movie_id}/reviews")
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.search_by_title(title)
-    response = API.connection_setup.get("/3/search/movie?query=#{title}")
+    response = MoviesService.connection_setup.get("/3/search/movie?query=#{title}")
     data = JSON.parse(response.body, symbolize_names: true)
   end
 end
