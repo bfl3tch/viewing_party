@@ -1,11 +1,17 @@
-<%= form_with model: @user, method: :post, local: true do |form| %>
+<br/><h1 align="center">
+  <div align="center">
+    <div class="card navbar-custom" style="width: 60rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <h1 align="center">New User Registration</h1><br/><br/>
+          <%= form_with model: @user, method: :post, local: true do |form| %>
   <%= form.label :username %>
-  <%= form.text_field :username %> <br>
+  <%= form.text_field :username, class: "btn btn-lg btn-outline-dark btn-light navbar-custom", size: 50 %> <br/><br/>
   <%= form.label :email %>
-  <%= form.text_field :email %> <br>
+  <%= form.text_field :email, class: "btn btn-lg btn-outline-dark btn-light navbar-custom", size: 50 %> <br/><br/>
   <%= form.label :password %>
-  <%= form.password_field :password %> <br>
-  <%= form.label :password_confirmation, "Password Confirmation" %>
-  <%= form.password_field :password_confirmation %> <br>
+  <%= form.password_field :password, class: "btn btn-lg btn-outline-dark btn-light navbar-custom", size: 50 %> <br/><br/>
+  <%= form.label :password_confirmation, "Confirm" %>
+  <%= form.password_field :password_confirmation, class: "btn btn-lg btn-outline-dark btn-light navbar-custom", size: 50 %> <br/><br/>
   <%= form.submit "Create User" %>
 <% end %>

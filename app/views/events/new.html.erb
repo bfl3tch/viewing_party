@@ -1,18 +1,33 @@
-<%= form_with url: events_path, local: true do |form| %>
-  <%= form.hidden_field :user_id, value: current_user.id %> <br>
-  <%= form.hidden_field :movie_id, value: session[:movie_id]["movie_id"] %> <br>
-  <%= form.label :title %> <br>
-  <%= form.text_field :title, readonly: true, value: session[:movie_id]["title"] %> <br>
-  <%= form.label :duration %>
-  <%= form.number_field :duration, value: session[:movie_id]["runtime"] %> <br>
-  <%= form.label :day %>
-  <%= form.date_select :day %> <br>
-  <%= form.label :start_time %>
-  <%= form.time_field :start_time, value: Time.now %> <br>
-  <%= form.label :invite %>
-  <%= form.collection_check_boxes(:friends, current_user.friends, :id, :email, include_hidden: false) do |friend|  %>
-    <%= friend.label %>
-    <%= friend.check_box %>
-  <% end %>
-  <%= form.submit "Create Party" %>
-<% end %>
+
+
+<div align="center">
+  <div class="card navbar-custom" style="width: 60rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        New Virtual Watch Party
+      </h5>
+      <h6 class="card-subtitle mb-2">
+        <%= form_with url: events_path, local: true do |form| %>
+          <%= form.hidden_field :user_id, value: current_user.id %> <br>
+          <%= form.hidden_field :movie_id, value: session[:movie_id]["movie_id"] %> <br>
+          <% form.label :title%> <br>
+          <%= form.text_field :title, size: 50, readonly: true, value: session[:movie_id]["title"], class: "btn btn-lg btn-light navbar-custom" %> <br><br/>
+          <%= form.label :duration, class: "btn btn-sm btn-light navbar-custom" %>
+          <%= form.number_field :duration, value: session[:movie_id]["runtime"], class: "btn btn-sm btn-outline-dark btn-light navbar-custom", min: session[:movie_id]["runtime"] %> <br><br/>
+          <%= form.label :day, class: "btn btn-sm btn-light navbar-custom" %>
+          <%= form.date_select :day, class: "btn btn-sm btn-light navbar-custom" %> <br><br/>
+          <%= form.label :start_time, class: "btn btn-sm btn-light navbar-custom" %>
+          <%= form.time_field :start_time, value: Time.now, class: "btn btn-sm btn-outline-dark btn-light navbar-custom" %> <br>
+          <% if !current_user.friends.empty? %><br/>
+            <%= form.label :invite, class: "btn btn-sm btn-outline-dark btn-light navbar-custom" %><br/><br/>
+            <%= form.collection_check_boxes(:friends, current_user.friends, :id, :email, include_hidden: false) do |friend|  %>
+              <%= friend.label %>
+              <%= friend.check_box(class: "btn btn-sm btn-outline-dark btn-light navbar-custom") %><br/><br/>
+            <% end %>
+          <% end %><br/>
+          <%= form.submit "Create Party", class: "btn btn-lg btn-outline-dark btn-light navbar-custom" %>
+        <% end %>
+        </h6>
+    </div>
+  </div>
+</div>

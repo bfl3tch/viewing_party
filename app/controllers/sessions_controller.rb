@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    flash[:success] = "Goodbye, #{current_user.username}!"
     session[:user_id] = nil
     redirect_to root_path
   end

@@ -1,9 +1,9 @@
 <div align="center">
   <section id='friends'>
     <h3>Friends</h3><hr/>
-    <%= form_with url: friendships_path, method: :post, class: "btn btn-warning btn-outline-primary", local: true do |f| %>
-      <%= f.label :search, "Friend's Email" %>
-      <%= f.text_field :search %>
+    <%= form_with url: friendships_path, method: :post, class: "btn btn-lg btn-outline-dark btn-light navbar-custom", local: true do |f| %>
+      <%= f.label :search, "Friend's Email"%>
+      <%= f.text_field :search, placeholder: "Must be exact match"  %>
       <%= f.submit "Add Friend" %>
     <% end %><br/><br/>
 
