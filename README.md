@@ -136,15 +136,6 @@ This project requires Ruby 2.7.2.
 * Run the test suite with `bundle exec rspec`.
 * Run your development server with `rails s` to see the app in action.
 
-## Phases
-
-1. [Database Setup](./doc/db_setup.md)
-1. [User Stories](./doc/user_stories.md)
-1. [Extensions](./doc/extensions.md)
-1. [Evaluation](./doc/evaluation.md)
-
-
-
 #### Project Configurations
 
 * Ruby version
@@ -160,24 +151,24 @@ This project requires Ruby 2.7.2.
     ```
     
 * [API access](https://developers.themoviedb.org/3/getting-started/introduction)
-```visit https://developers.themoviedb.org/3/getting-started/introduction
-- Signup for an account
-- To register for an API key, click the  from within your account settings page. You can also view the screenshots below for help:
-  - Click on your avatar or initials in the main navigation
-  - Click the "Settings" link
-  - Click the "API" link in the left sidebar
-  - Click "Create" or "click here" on the API page
-- We will be using the `v4` token.
-```
+    ```visit https://developers.themoviedb.org/3/getting-started/introduction
+    - Signup for an account
+    - To register for an API key, click the  from within your account settings page.
+      - Click on your avatar or initials in the main navigation
+      - Click the "Settings" link
+      - Click the "API" link in the left sidebar
+      - Click "Create" or "click here" on the API page
+    - We will be using the `v4` token.
+    ```
     
 * [API access setup](https://github.com/laserlemon/figaro)
-```bash
-$ gem install figaro
-$ bundle exec figaro install
-open the new hidden file `application.yml`
-set `movie_api_key: <<Bearer (your bearer token)>>`
-Rails 5.2.6
-```
+    ```bash
+    $ gem install figaro
+    $ bundle exec figaro install
+    open the new hidden file `application.yml`
+    set `movie_api_key: <<Bearer (your bearer token)>>`
+    Rails 5.2.6
+    ```
 
 * Database creation
     ```bash
