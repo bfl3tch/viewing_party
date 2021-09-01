@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     if @event.save && params[:friends]
       EventsFacade.create_attendees(params[:friends], @event)
       EventsFacade.create_attendee(current_user, @event)
-      EventNotifierMailer.new_event_email(current_user, params[:friends], @event).deliver
+      # EventNotifierMailer.new_event_email(current_user, params[:friends], @event).deliver
       redirect_to dashboard_path, flash: { notice: "Virtual Watch Party for #{@event.title} Created!" }
       session[:movie_id] = nil
     elsif @event.save

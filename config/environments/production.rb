@@ -14,11 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
-<<<<<<< HEAD
   config.action_mailer.perform_deliveries = true
-=======
-
->>>>>>> e0cc1c4f7d4db7929c7ab231f1c5ed90cb923d2f
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
