@@ -1,0 +1,6 @@
+<h1>Hello, <%= @friend.username %>! </h1>
+
+<p>
+  You were invited by <%= @user.username %> to watch <%= @event.title %>.
+  Your viewing starts at <%= @event.start_time.strftime("%l:%M %p") %> on <%= @event.day.strftime("%B %d, %Y") %>
+</p>

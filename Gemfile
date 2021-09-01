@@ -19,7 +19,6 @@ gem 'bcrypt'
 gem 'faraday'
 gem 'figaro'
 
-
 group :development, :test do
   gem 'pry'
   gem 'travis'
