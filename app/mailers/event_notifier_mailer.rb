@@ -1,5 +1,4 @@
 class EventNotifierMailer < ApplicationMailer
-
   def new_event_email(user, friends, event)
     @user = user
     @event = event
@@ -9,10 +8,8 @@ class EventNotifierMailer < ApplicationMailer
     end
 
     friends_list.each do |user|
-      # @greeting = "Hello #{user.username}"
       @friend = user
       mail(to: user.email, subject: "You have been invited to watch #{@event.title}")
     end
   end
-
 end

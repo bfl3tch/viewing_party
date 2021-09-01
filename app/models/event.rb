@@ -10,6 +10,6 @@ class Event < ApplicationRecord
   validates :start_time, presence: true
 
   def determine_host
-    User.joins(:events).where('users.id = ?', self.user_id).first
+    User.joins(:events).where('users.id = ?', user_id).first
   end
 end

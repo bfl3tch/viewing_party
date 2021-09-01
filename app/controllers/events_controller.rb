@@ -1,10 +1,5 @@
 class EventsController < ApplicationController
-
-  def new
-    # require "pry"; binding.pry
-    # @user = current_user
-    # @movie = MoviesService.movie_by_id(params[:movie_id])
-  end
+  def new; end
 
   def create
     @event = Event.new(event_params)
@@ -30,5 +25,4 @@ class EventsController < ApplicationController
   def event_params
     params.permit(:title, :user_id, :duration, :day, :start_time)
   end
-
 end

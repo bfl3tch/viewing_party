@@ -1,6 +1,5 @@
 module APIS
   class MoviesFacade
-
     def self.top_40_movies_array
       first = MoviesService.top_20_rated
       second = MoviesService.next_20_rated
@@ -36,6 +35,5 @@ module APIS
         MovieReview.new(review)
       end
     end
-
   end
 end

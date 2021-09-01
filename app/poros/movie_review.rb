@@ -5,5 +5,4 @@ class MovieReview
     @author = review[:author]
     @content = review[:content]
   end
-
 end

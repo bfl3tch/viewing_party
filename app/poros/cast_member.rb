@@ -5,5 +5,4 @@ class CastMember
     @name = cast[:name]
     @character = cast[:character]
   end
-
 end
