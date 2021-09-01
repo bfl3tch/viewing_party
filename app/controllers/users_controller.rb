@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     user[:email] = user[:email].downcase
     new_user = User.create(user_params)
     if new_user.save
+      UserMailer.account_setup(new_user).deliver
       flash[:success] = "Welcome, #{new_user.username}"
       session[:user_id] = new_user.id
       redirect_to dashboard_path
