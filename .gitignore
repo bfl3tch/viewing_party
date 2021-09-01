@@ -18,6 +18,7 @@
 
 # Ignore test coverage
 /coverage/*
+/spec/fixtures/vcr_cassettes
 
 # Ignore application configuration
 /config/application.yml
