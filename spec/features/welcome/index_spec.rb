@@ -36,7 +36,43 @@ RSpec.describe "Welcome Page" do
       expect(page).to have_content("Username")
       expect(page).to have_content("Email")
       expect(page).to have_content("Password")
-      expect(page).to have_content("Password Confirmation")
+      expect(page).to have_content("Confirm")
+    end
+
+    it 'wont allow you to login with the incorrect password' do
+      visit(root_path)
+
+      fill_in :username, with: "StevenSpielberg"
+      fill_in :password, with: "WrongPassword"
+      click_on "Log In"
+
+      expect(page).to have_content('Your password is incorrect, try again.')
+      expect(current_path).to eq(root_path)
+    end
+
+    it 'wont let you login with a username that doesnt exist' do
+      visit(root_path)
+
+      fill_in :username, with: "NonExistingUser"
+      fill_in :password, with: "WrongPassword"
+      click_on "Log In"
+
+      expect(page).to have_content("That account doesn't exist, try registering it.")
+      expect(current_path).to eq(root_path)
+    end
+
+    it 'allows you to logout successfully' do
+      visit(root_path)
+      fill_in :username, with: "StevenSpielberg"
+      fill_in :password, with: "Tester"
+      click_on "Log In"
+      expect(page).to have_content("Welcome, StevenSpielberg!")
+      expect(current_path).to eq(dashboard_path)
+
+      click_on "Logout"
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Goodbye, StevenSpielberg!")
     end
   end
 end
