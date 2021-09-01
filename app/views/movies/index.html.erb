@@ -13,5 +13,25 @@
 <% end %>
 
 <% if !@movies.nil?  %>
-  <%= render 'top_40'  %>
+<br><br>
+<div align="center">
+  <div class="card navbar-custom"  style="width: 18rem;">
+    <div class="card-body">
+      <h1 class="card-title">
+        Top 40 Movies
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <%= render 'top_40_odd'  %>
+    </div>
+    <div class="col-6">
+      <%= render 'top_40_even'  %>
+    </div>
+  </div>
+</div>
 <% end %>
