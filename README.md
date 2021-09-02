@@ -32,7 +32,7 @@
   We created an application that consumes a movie database 3rd party API and allows users to login, add friends, search for movies, get a list of recommended movies, see details about each movie, and add their friends to `Virtual-Watch-Parties` which are "dates" to all watch the chosen movie at an agreed upon time.
 
   <p align="center">
-    <img src="https://user-images.githubusercontent.com/74567704/131573070-d215df1c-d891-4c49-b0e3-7fe4fd711afc.png" alt="top_rated_movies_page"/>
+    <img src="https://user-images.githubusercontent.com/74567704/131766071-15d6e7ff-b2db-4fb1-aa75-e0b3cfd9b8f2.png" alt="top_rated_movies_page"/>
   </p>
 
   - ⭐ Consume JSON APIs that require authentication
