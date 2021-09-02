@@ -24,6 +24,7 @@
   - [Tools Utilized](#tools-used)
   - [Contributing](#contributors)
   - [Setup](#setup)
+  - [Using Virtual Watch Party](#using)
 
   ### <ins align="center">Overview</ins>
 
@@ -208,3 +209,22 @@
       ```
 
   * [Heroku Deployment](https://virtual-watch-party.herokuapp.com/), for production
+
+### How to use Virtual Watch Party ###
+
+## <ins>Using</ins>
+
+   <p align="center">
+    Select a Movie
+      <img src="https://user-images.githubusercontent.com/74567704/131766560-eb3e2da0-c4e5-4792-91a8-2bbd837e272f.png">
+   </p>
+   
+   <p align="center">
+  Creating a party and selecting your friends
+      <img src="https://user-images.githubusercontent.com/74567704/131766496-c72131e1-273e-401e-8bfc-beb96bb323a4.png">
+   </p>
+   
+   <p align="center">
+    View all parties you created and were invited to
+      <img src="https://user-images.githubusercontent.com/74567704/131766602-a4e86ee8-edb0-43c3-b4f2-9d6989be5652.png">
+   </p>
