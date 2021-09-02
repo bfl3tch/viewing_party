@@ -225,6 +225,6 @@
    </p>
    
    <p align="center">
-    View all parties you created and were invited to
+    On your dashboard, view all parties you created and were invited to
       <img src="https://user-images.githubusercontent.com/74567704/131766602-a4e86ee8-edb0-43c3-b4f2-9d6989be5652.png">
    </p>
