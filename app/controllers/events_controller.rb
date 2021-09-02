@@ -3,18 +3,14 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    if @event.save && params[:friends]
-      EventsFacade.create_attendees(params[:friends], @event)
+    if @event.save
+      EventsFacade.create_attendees(params[:friends], @event) if params[:friends]
       EventsFacade.create_attendee(current_user, @event)
       # EventNotifierMailer.new_event_email(current_user, params[:friends], @event).deliver
       redirect_to dashboard_path, flash: { notice: "Virtual Watch Party for #{@event.title} Created!" }
       session[:movie_id] = nil
-    elsif @event.save
-      EventsFacade.create_attendee(current_user, @event)
-      redirect_to dashboard_path, flash: { notice: "Virtual Watch Party for #{@event.title} Created!" }
-      session[:movie_id] = nil
     else
-      @movie = MoviesService.movie_by_id(params[:movie_id])
+      @movie = APIS::MoviesFacade.find_by_title(params[:query])
       flash.now[:errors] = @event.errors.full_messages.to_sentence
       render :new
     end
